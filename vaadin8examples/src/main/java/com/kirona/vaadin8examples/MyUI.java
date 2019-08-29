@@ -22,20 +22,33 @@ import com.vaadin.ui.Window;
 public class MyUI extends UI {
 
 	final BasicForm form = new BasicForm();
+	final GridExample grid = new GridExample();
 	
     @Override
     protected void init(VaadinRequest vaadinRequest) {
         final VerticalLayout layout = new VerticalLayout();
         
-        Button button = new Button("Click Me");
-        button.addClickListener(e -> {
-        	final Window w = form.popupWindow(
-        			BasicForm.FormBean::new, 
-        			fb->System.out.println("Received FormBean = " + fb));
-        	this.addWindow(w);
-        });
+        {
+	        Button button = new Button("A Form");
+	        button.addClickListener(e -> {
+	        	final Window w = form.popupWindow(
+	        			BasicForm.FormBean::new, 
+	        			fb->System.out.println("Received FormBean = " + fb));
+	        	this.addWindow(w);
+	        });
+	        
+	        layout.addComponent(button);
+        }
         
-        layout.addComponent(button);
+        {
+	        Button button = new Button("A Grid");
+	        button.addClickListener(e -> {
+	        	final Window w = grid.popupWindow(GridExample.listSize(10000));
+	        	this.addWindow(w);
+	        });
+	        
+	        layout.addComponent(button);
+        }
         
         setContent(layout);
     }
