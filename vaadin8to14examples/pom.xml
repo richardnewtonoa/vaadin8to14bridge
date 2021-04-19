@@ -10,7 +10,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
-        <vaadin.version>14.0.0</vaadin.version>
+        <vaadin.version>19.0.5</vaadin.version>
     </properties>
 
     <repositories>
@@ -145,7 +145,7 @@
             <plugin>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-maven-plugin</artifactId>
-                <version>14.0.0</version>
+                <version>19.0.5</version>
                 <executions>
                     <execution>
                         <goals>
